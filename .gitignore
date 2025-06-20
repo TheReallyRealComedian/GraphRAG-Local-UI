@@ -1,0 +1,19 @@
+# Environment variables
+.env
+
+# Indexing output and cache
+indexing/
+lancedb/
+
+# Python specific
+__pycache__/
+*.pyc
+.venv
+venv/
+env/
+
+# macOS specific
+.DS_Store
+
+# Gradio cache
+.gradio/
