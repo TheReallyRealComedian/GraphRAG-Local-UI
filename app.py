@@ -1118,19 +1118,19 @@ def list_folder_contents(folder_path):
     return contents
 
 def update_output_folder_list():
-    root_dir = "./"
+    root_dir = "./indexing"
     folders = list_output_folders(root_dir)
     return gr.update(choices=folders, value=folders[0] if folders else None)
 
 def update_folder_content_list(folder_name):
-    root_dir = "./"
+    root_dir = "./indexing"
     if not folder_name:
         return gr.update(choices=[])
     contents = list_folder_contents(os.path.join(root_dir, "output", folder_name, "artifacts"))
     return gr.update(choices=contents)
 
 def handle_content_selection(folder_name, selected_item):
-    root_dir = "./"
+    root_dir = "./indexing"
     if isinstance(selected_item, list) and selected_item:
         selected_item = selected_item[0]  # Take the first item if it's a list
     
@@ -1150,7 +1150,7 @@ def handle_content_selection(folder_name, selected_item):
         return gr.update(), "", ""
 
 def initialize_selected_folder(folder_name):
-    root_dir = "./"
+    root_dir = "./indexing"
     if not folder_name:
         return "Please select a folder first.", gr.update(choices=[])
     folder_path = os.path.join(root_dir, "output", folder_name, "artifacts")
